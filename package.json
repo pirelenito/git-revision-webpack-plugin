@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/pirelenito/git-revision-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin"
+  "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin",
+  "devDependencies": {
+    "standard": "^6.0.5"
+  }
 }
