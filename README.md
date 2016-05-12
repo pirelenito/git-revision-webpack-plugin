@@ -38,3 +38,21 @@ And a `COMMITHASH` such as:
 ```
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
+
+### Path Substitutions
+
+It is also possible to use two [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get either the revision or version as part of output paths.
+
+- `[git-revision-version]`
+- `[git-revision-hash]`
+
+Example:
+
+```javascript
+module.exports = {
+  output: {
+    publicPath: 'http://my-fancy-cdn.com/[git-revision-version]/',
+    filename: '[name]-[git-revision-hash].js'
+  }
+}
+```
