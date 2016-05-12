@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.0.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'test:unit' ]
+2 info using npm@3.8.6
+3 info using node@v6.0.0
+4 verbose run-script [ 'pretest:unit', 'test:unit', 'posttest:unit' ]
+5 info lifecycle git-revision-webpack-plugin@1.0.1~pretest:unit: git-revision-webpack-plugin@1.0.1
+6 silly lifecycle git-revision-webpack-plugin@1.0.1~pretest:unit: no script for pretest:unit, continuing
+7 info lifecycle git-revision-webpack-plugin@1.0.1~test:unit: git-revision-webpack-plugin@1.0.1
+8 verbose lifecycle git-revision-webpack-plugin@1.0.1~test:unit: unsafe-perm in lifecycle true
+9 verbose lifecycle git-revision-webpack-plugin@1.0.1~test:unit: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/paulo.ragonha/Development/me/git-revision-webpack-plugin/node_modules/.bin:/usr/local/Cellar/node/6.0.0/bin:/usr/local/bin:/usr/local/var/rbenv/shims:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/paulo.ragonha/.bin:/Users/paulo.ragonha/go/bin
+10 verbose lifecycle git-revision-webpack-plugin@1.0.1~test:unit: CWD: /Users/paulo.ragonha/Development/me/git-revision-webpack-plugin
+11 silly lifecycle git-revision-webpack-plugin@1.0.1~test:unit: Args: [ '-c', 'mocha recursive --reporter spec ./lib' ]
+12 silly lifecycle git-revision-webpack-plugin@1.0.1~test:unit: Returned: code: 1  signal: null
+13 info lifecycle git-revision-webpack-plugin@1.0.1~test:unit: Failed to exec test:unit script
+14 verbose stack Error: git-revision-webpack-plugin@1.0.1 test:unit: `mocha recursive --reporter spec ./lib`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:239:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:850:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+15 verbose pkgid git-revision-webpack-plugin@1.0.1
+16 verbose cwd /Users/paulo.ragonha/Development/me/git-revision-webpack-plugin/fixtures
+17 error Darwin 15.4.0
+18 error argv "/usr/local/Cellar/node/6.0.0/bin/node" "/usr/local/bin/npm" "run" "test:unit"
+19 error node v6.0.0
+20 error npm  v3.8.6
+21 error code ELIFECYCLE
+22 error git-revision-webpack-plugin@1.0.1 test:unit: `mocha recursive --reporter spec ./lib`
+22 error Exit status 1
+23 error Failed at the git-revision-webpack-plugin@1.0.1 test:unit script 'mocha recursive --reporter spec ./lib'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the git-revision-webpack-plugin package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     mocha recursive --reporter spec ./lib
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs git-revision-webpack-plugin
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls git-revision-webpack-plugin
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
