@@ -9,6 +9,9 @@
     "test:unit": "mocha recursive --reporter spec ./lib",
     "test:unit-watch": "npm run test:unit -- --watch"
   },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pirelenito/git-revision-webpack-plugin.git"
