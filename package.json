@@ -27,8 +27,10 @@
   },
   "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin",
   "devDependencies": {
+    "chai": "^3.5.0",
     "file-loader": "^0.8.5",
     "fs-extra": "^0.30.0",
+    "mocha": "^2.4.5",
     "standard": "^6.0.5",
     "webpack": "^1.13.0"
   }
