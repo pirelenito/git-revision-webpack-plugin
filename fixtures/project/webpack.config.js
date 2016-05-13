@@ -1,6 +1,3 @@
-var path = require('path')
-var GitRevisionPlugin = require(path.join(__dirname, '../../'))
-
 module.exports = {
   entry: './index.js',
 
@@ -16,9 +13,5 @@ module.exports = {
         loader: 'file?name=[name][git-revision-version].[ext]'
       }
     ]
-  },
-
-  plugins: [
-    new GitRevisionPlugin()
-  ]
+  }
 }
