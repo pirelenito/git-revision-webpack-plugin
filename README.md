@@ -56,3 +56,21 @@ module.exports = {
   }
 }
 ```
+
+### Public API
+
+The `VERSION` and `COMMITHASH` are also exposed through a public API.
+
+Example:
+
+```javascript
+var gitRevisionPlugin = new GitRevisionPlugin()
+module.exports = {
+  plugins: [
+    new DefinePlugin({
+      'VERSION': JSON.stringify(gitRevisionPlugin.version()),
+      'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
+    })
+  ]
+}
+```
