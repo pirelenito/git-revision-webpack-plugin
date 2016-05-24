@@ -61,10 +61,11 @@ module.exports = {
 
 The `VERSION` and `COMMITHASH` are also exposed through a public API.
 
-Example:
+Example using the [DefinePlugin](http://webpack.github.io/docs/list-of-plugins.html#defineplugin):
 
 ```javascript
 var gitRevisionPlugin = new GitRevisionPlugin()
+
 module.exports = {
   plugins: [
     new DefinePlugin({
