@@ -5,3 +5,5 @@
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
+[receive]
+	denyCurrentBranch = ignore

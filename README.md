@@ -39,6 +39,18 @@ And a `COMMITHASH` such as:
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
 
+If you need lightweight tags support, you may turn on `lighweithTags` option in this way:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({lightweightTags: true})
+  ]
+}
+```
+
 ### Path Substitutions
 
 It is also possible to use two [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get either the revision or version as part of output paths.
