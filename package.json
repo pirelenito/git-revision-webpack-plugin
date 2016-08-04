@@ -17,8 +17,11 @@
     "url": "https://github.com/pirelenito/git-revision-webpack-plugin.git"
   },
   "keywords": [
-    "webpack",
-    "plugin"
+    "git",
+    "git-describe",
+    "plugin",
+    "version",
+    "webpack"
   ],
   "author": "Paulo Ragonha",
   "license": "MIT",
