@@ -39,14 +39,14 @@ And a `COMMITHASH` such as:
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
 
-If you need lightweight tags support, you may turn on `lighweithTags` option in this way:
+If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lighweithTags` option in this way:
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
-    new GitRevisionPlugin({lightweightTags: true})
+    new GitRevisionPlugin({ lightweightTags: true })
   ]
 }
 ```
