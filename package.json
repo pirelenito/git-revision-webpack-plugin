@@ -1,6 +1,6 @@
 {
   "name": "git-revision-webpack-plugin",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Simple webpack plugin that generates VERSION and COMMITHASH files during build",
   "main": "lib/index.js",
   "scripts": {
