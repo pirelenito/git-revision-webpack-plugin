@@ -43,7 +43,7 @@ And a `COMMITHASH` such as:
 
 The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
 
-### `lightweightTags: true`
+### `lightweightTags: false`
 
 If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lighweithTags` option in this way:
 
