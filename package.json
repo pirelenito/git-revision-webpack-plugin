@@ -34,6 +34,8 @@
     "file-loader": "^0.8.5",
     "fs-extra": "^0.30.0",
     "mocha": "^2.4.5",
+    "rewire": "^2.5.2",
+    "sinon": "^1.17.5",
     "standard": "^6.0.5",
     "webpack": "^1.13.0"
   }
