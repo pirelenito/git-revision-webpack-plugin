@@ -39,6 +39,12 @@ And a `COMMITHASH` such as:
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
 
+## Configuration
+
+The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
+
+### `lightweightTags: true`
+
 If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lighweithTags` option in this way:
 
 ```javascript
@@ -46,12 +52,46 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
-    new GitRevisionPlugin({ lightweightTags: true })
+    new GitRevisionPlugin({
+      lightweightTags: true
+    })
   ]
 }
 ```
 
-### Path Substitutions
+### `commithashCommand: 'rev-parse HEAD'`
+
+To change the default `git` command used to read the value of `COMMITHASH`:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      commithashCommand: 'rev-list --max-count=1 --no-merges HEAD'
+    })
+  ]
+}
+```
+
+### `versionCommand: 'describe --always'`
+
+To change the default `git` command used to read the value of `VERSION`:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      versionCommand: 'describe --always --tags --dirty'
+    })
+  ]
+}
+```
+
+## Path Substitutions
 
 It is also possible to use two [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get either the revision or version as part of output paths.
 
@@ -69,7 +109,7 @@ module.exports = {
 }
 ```
 
-### Public API
+## Plugin API
 
 The `VERSION` and `COMMITHASH` are also exposed through a public API.
 
