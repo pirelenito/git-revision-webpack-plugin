@@ -4,3 +4,11 @@ node_js:
   - "5"
 # send builds to the container-based infrastructure
 sudo: false
+deploy:
+  provider: npm
+  email: paulo@ragonha.me
+  api_key:
+    secure: ASEjiPbDFa/ge1bypuYXvVwJewVUplKtn24o8u0I/+u7MaPSqtMsQp96wT9T8IAaJksvSRNvKhEeaLjukWN+Jqvi3TUTJz85R7aHxPMQiEoupRx2LcNLdSvDg5DhjiKMVvwItEY2zoxzVRA3HBal0MgDd5KA3xi2QxOA+ZLLr/bWo6TcFFvsTnK9Jsi/tQ9DN6maK4fH8iEdfTS1vrHeGliu1WklP2dBAEi0vEAC2f7IXdo5pwG0oKjt6naDqdvDg/fRVfMP7meo81Z5+7CiZsI6fiSqIK0fc17u/41lsamiQyGf8Bue4WaVx6FewTJgayG76MzFNgLCkRtqyhi2Em3X+Hkf4dY3CtY0L6AqDmZns1NVcSjCy+7l/5ik2RGAMnlZgwBaRxc+L/lk0wzKEdhImBlBQ1UK8llDUv8I2j6owNT5McYhFyfGZ9D2uv/DXSgIlPV5FY3FaZsUM6J68NWTpZbDUaNfY+zS1qViirNFvqIDM3i1uiHWdG5tRQ3CRYSNsYHL/Ll83WLSQg0zqpX/L6I41FfWBCaBgRrXR7pRXtNTyIDhw0YtjlpZB8YsIzkn9ATb/U4yFzJjWHfzf6cTCqa41Wp5zK+1yG7qp3ehkO+S2braLp/suMHnkFwD4U9iJQT797NGb1MFc2YbQE1RaKwZNKL8XzmHJGt7pUM=
+  on:
+    tags: true
+    repo: pirelenito/git-revision-webpack-plugin
