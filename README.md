@@ -46,7 +46,7 @@ The plugin requires no configuration by default, but it is possible to configure
 
 ### `lightweightTags: false`
 
-If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lighweithTags` option in this way:
+If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lightweightTags` option in this way:
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
