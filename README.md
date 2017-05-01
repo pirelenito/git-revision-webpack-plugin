@@ -40,6 +40,12 @@ And a `COMMITHASH` such as:
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
 
+And with the branch option enabled a `BRANCH` such as:
+
+```
+master
+```
+
 ## Configuration
 
 The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
@@ -55,6 +61,22 @@ module.exports = {
   plugins: [
     new GitRevisionPlugin({
       lightweightTags: true
+    })
+  ]
+}
+```
+
+### `branch: false`
+
+If you need branch name support, you may turn on `branch` option in this way:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      branch: true
     })
   ]
 }
@@ -92,12 +114,29 @@ module.exports = {
 }
 ```
 
+### `branchCommand: 'rev-parse --abbrev-ref HEAD'`
+
+To change the default `git` command used to read the value of `BRANCH`:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      branchCommand: 'git rev-parse --symbolic-full-name HEAD'
+    })
+  ]
+}
+```
+
 ## Path Substitutions
 
 It is also possible to use two [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get either the revision or version as part of output paths.
 
 - `[git-revision-version]`
 - `[git-revision-hash]`
+- `[git-revision-branch]` (only with the branch option enabled)
 
 Example:
 
@@ -112,7 +151,7 @@ module.exports = {
 
 ## Plugin API
 
-The `VERSION` and `COMMITHASH` are also exposed through a public API.
+The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
 
 Example using the [DefinePlugin](http://webpack.github.io/docs/list-of-plugins.html#defineplugin):
 
@@ -124,6 +163,7 @@ module.exports = {
     new DefinePlugin({
       'VERSION': JSON.stringify(gitRevisionPlugin.version()),
       'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
+      'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
     })
   ]
 }
