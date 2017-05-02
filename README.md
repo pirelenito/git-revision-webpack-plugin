@@ -34,13 +34,13 @@ It outputs a `VERSION` based on [git-describe](http://www.git-scm.com/docs/git-d
 v0.0.0-34-g7c16d8b
 ```
 
-And a `COMMITHASH` such as:
+A `COMMITHASH` such as:
 
 ```
 7c16d8b1abeced419c14eb9908baeb4229ac0542
 ```
 
-And with the branch option enabled a `BRANCH` such as:
+And (optionally [when branch is enabled](#branch-false)) a `BRANCH` such as:
 
 ```
 master
@@ -124,7 +124,7 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      branchCommand: 'git rev-parse --symbolic-full-name HEAD'
+      branchCommand: 'rev-parse --symbolic-full-name HEAD'
     })
   ]
 }
@@ -136,7 +136,7 @@ It is also possible to use two [path substituitions](http://webpack.github.io/do
 
 - `[git-revision-version]`
 - `[git-revision-hash]`
-- `[git-revision-branch]` (only with the branch option enabled)
+- `[git-revision-branch]` (only [when branch is enabled](#branch-false))
 
 Example:
 
