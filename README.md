@@ -46,6 +46,45 @@ And (optionally [when branch is enabled](#branch-false)) a `BRANCH` such as:
 master
 ```
 
+## Path Substitutions
+
+It is also possible to use [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get the revision, version or branch as part of output paths.
+
+- `[git-revision-version]`
+- `[git-revision-hash]`
+- `[git-revision-branch]` (only [when branch is enabled](#branch-false))
+
+Example:
+
+```javascript
+module.exports = {
+  output: {
+    publicPath: 'http://my-fancy-cdn.com/[git-revision-version]/',
+    filename: '[name]-[git-revision-hash].js'
+  }
+}
+```
+
+## Plugin API
+
+The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
+
+Example using the [DefinePlugin](http://webpack.github.io/docs/list-of-plugins.html#defineplugin):
+
+```javascript
+var gitRevisionPlugin = new GitRevisionPlugin()
+
+module.exports = {
+  plugins: [
+    new DefinePlugin({
+      'VERSION': JSON.stringify(gitRevisionPlugin.version()),
+      'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
+      'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
+    })
+  ]
+}
+```
+
 ## Configuration
 
 The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
@@ -125,45 +164,6 @@ module.exports = {
   plugins: [
     new GitRevisionPlugin({
       branchCommand: 'rev-parse --symbolic-full-name HEAD'
-    })
-  ]
-}
-```
-
-## Path Substitutions
-
-It is also possible to use two [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get either the revision or version as part of output paths.
-
-- `[git-revision-version]`
-- `[git-revision-hash]`
-- `[git-revision-branch]` (only [when branch is enabled](#branch-false))
-
-Example:
-
-```javascript
-module.exports = {
-  output: {
-    publicPath: 'http://my-fancy-cdn.com/[git-revision-version]/',
-    filename: '[name]-[git-revision-hash].js'
-  }
-}
-```
-
-## Plugin API
-
-The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
-
-Example using the [DefinePlugin](http://webpack.github.io/docs/list-of-plugins.html#defineplugin):
-
-```javascript
-var gitRevisionPlugin = new GitRevisionPlugin()
-
-module.exports = {
-  plugins: [
-    new DefinePlugin({
-      'VERSION': JSON.stringify(gitRevisionPlugin.version()),
-      'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
-      'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
     })
   ]
 }
