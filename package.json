@@ -29,14 +29,17 @@
     "url": "https://github.com/pirelenito/git-revision-webpack-plugin/issues"
   },
   "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin",
+  "peerDependency": {
+    "webpack": "^4.0.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
-    "file-loader": "^0.8.5",
+    "file-loader": "^1.1.11",
     "fs-extra": "^0.30.0",
     "mocha": "^2.4.5",
     "rewire": "^2.5.2",
     "sinon": "^1.17.5",
     "standard": "^6.0.5",
-    "webpack": "^1.13.0"
+    "webpack": "^4.6.0"
   }
 }
