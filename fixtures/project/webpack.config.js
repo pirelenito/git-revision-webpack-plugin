@@ -7,10 +7,10 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(txt)$/,
-        loader: 'file?name=[name]-[git-revision-branch]-[git-revision-version].[ext]'
+        use: 'file-loader?name=[name]-[git-revision-branch]-[git-revision-version].[ext]'
       }
     ]
   }
