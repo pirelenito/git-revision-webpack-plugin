@@ -168,3 +168,19 @@ module.exports = {
   ]
 }
 ```
+
+### `path: 'path/to/files'`
+
+To change the output path of the `VERSION`, `COMMITHASH`, and `BRANCH` files (relative to Webpack's [`output.path`](https://webpack.js.org/configuration/output/#output-path) setting):
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      path: 'common'
+    })
+  ]
+}
+```
