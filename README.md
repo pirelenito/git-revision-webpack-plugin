@@ -1,4 +1,4 @@
-# Git Revision Webpack Plugin
+# Git revision webpack plugin
 
 [![Build Status](https://travis-ci.org/pirelenito/git-revision-webpack-plugin.svg)](https://travis-ci.org/pirelenito/git-revision-webpack-plugin)
 [![npm version](https://badge.fury.io/js/git-revision-webpack-plugin.svg)](https://badge.fury.io/js/git-revision-webpack-plugin)
@@ -10,7 +10,7 @@ Simple [webpack](https://webpack.js.org/) plugin that generates `VERSION` and `C
 
 ## Usage
 
-Given a **Webpack 4** project ([check bellow](#outdated-webpack) for **old Webpack versions**), install it as a local development dependency:
+Given a **webpack 4** project ([check bellow](#outdated-webpack) for **old webpack versions**), install it as a local development dependency:
 
 ```bash
 npm install --save-dev git-revision-webpack-plugin
@@ -169,7 +169,7 @@ module.exports = {
 }
 ```
 
-## Outdated Webpack
+## Outdated webpack
 
 If your project is **not using Wepack version 4 or greater**, you will need to install an older version of this package:
 
