@@ -6,11 +6,11 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Code Climate](https://codeclimate.com/github/pirelenito/git-revision-webpack-plugin/badges/gpa.svg)](https://codeclimate.com/github/pirelenito/git-revision-webpack-plugin)
 
-Simple [webpack](http://webpack.github.io/) plugin that generates `VERSION` and `COMMITHASH` files during build based on a local [git](http://www.git-scm.com/) repository.
+Simple [webpack](https://webpack.js.org/) plugin that generates `VERSION` and `COMMITHASH` files during build based on a local [git](http://www.git-scm.com/) repository.
 
 ## Usage
 
-Given a webpack project, install it as a local development dependency:
+Given a **Webpack 4** project ([check bellow](#outdated-webpack) for **old Webpack versions**), install it as a local development dependency:
 
 ```bash
 npm install --save-dev git-revision-webpack-plugin
@@ -48,7 +48,7 @@ master
 
 ## Path Substitutions
 
-It is also possible to use [path substituitions](http://webpack.github.io/docs/configuration.html#output-filename) on build to get the revision, version or branch as part of output paths.
+It is also possible to use [path substituitions](https://webpack.js.org/configuration/output/#output-filename) on build to get the revision, version or branch as part of output paths.
 
 - `[git-revision-version]`
 - `[git-revision-hash]`
@@ -69,7 +69,7 @@ module.exports = {
 
 The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
 
-Example using the [DefinePlugin](http://webpack.github.io/docs/list-of-plugins.html#defineplugin):
+Example using the [DefinePlugin](https://webpack.js.org/plugins/define-plugin/#usage):
 
 ```javascript
 var gitRevisionPlugin = new GitRevisionPlugin()
@@ -168,3 +168,13 @@ module.exports = {
   ]
 }
 ```
+
+## Outdated Webpack
+
+If your project is **not using Wepack version 4 or greater**, you will need to install an older version of this package:
+
+```
+npm install git-revision-webpack-plugin@2.5.1
+```
+
+Check [issue 29](https://github.com/pirelenito/git-revision-webpack-plugin/issues/29) for more information.
