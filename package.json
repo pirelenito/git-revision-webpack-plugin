@@ -10,8 +10,7 @@
     "test:unit-watch": "npm run test:unit -- --watch"
   },
   "engines": {
-    "node": ">=8.0.0",
-    "npm": ">=5.0.0"
+    "node": ">=6.11.5"
   },
   "files": [
     "lib"
