@@ -10,7 +10,7 @@ Simple [webpack](https://webpack.js.org/) plugin that generates `VERSION` and `C
 
 ## Usage
 
-Given a **webpack 4** project ([check bellow](#outdated-webpack) for **old webpack versions**), install it as a local development dependency:
+Given a **webpack 4** project ([check below](#outdated-webpack) for **old webpack versions**), install it as a local development dependency:
 
 ```bash
 npm install --save-dev git-revision-webpack-plugin
@@ -48,7 +48,7 @@ master
 
 ## Path Substitutions
 
-It is also possible to use [path substituitions](https://webpack.js.org/configuration/output/#output-filename) on build to get the revision, version or branch as part of output paths.
+It is also possible to use [path substitutions](https://webpack.js.org/configuration/output/#output-filename) on build to get the revision, version or branch as part of output paths.
 
 - `[git-revision-version]`
 - `[git-revision-hash]`
@@ -91,7 +91,7 @@ The plugin requires no configuration by default, but it is possible to configure
 
 ### `lightweightTags: false`
 
-If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags) support, you may turn on `lightweightTags` option in this way:
+If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags) support, you may turn on `lightweightTags` option in this way:
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
@@ -171,7 +171,7 @@ module.exports = {
 
 ## Outdated webpack
 
-If your project is **not using Wepack version 4 or greater**, you will need to install an older version of this package:
+If your project is **not using webpack version 4 or greater**, you will need to install an older version of this package:
 
 ```
 npm install git-revision-webpack-plugin@2.5.1
