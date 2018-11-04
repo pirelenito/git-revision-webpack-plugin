@@ -72,11 +72,14 @@ The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
 Example using the [DefinePlugin](https://webpack.js.org/plugins/define-plugin/#usage):
 
 ```javascript
-var gitRevisionPlugin = new GitRevisionPlugin()
+const webpack = require('webpack')
+const GitRevisionPlugin = require('git-revision-webpack-plugin')
+const gitRevisionPlugin = new GitRevisionPlugin()
 
 module.exports = {
   plugins: [
-    new DefinePlugin({
+    gitRevisionPlugin,
+    new webpack.DefinePlugin({
       'VERSION': JSON.stringify(gitRevisionPlugin.version()),
       'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
       'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
