@@ -1,20 +1,11 @@
 {
   "name": "git-revision-webpack-plugin",
   "version": "3.0.4",
-  "description": "Simple webpack plugin that generates VERSION and COMMITHASH files during build",
-  "main": "lib/index.js",
-  "scripts": {
-    "format": "prettier --write \"**/*.@(json|js|ts)\"",
-    "test": "npm run test:lint && npm run test:unit",
-    "test:lint": "eslint --ext .ts --ext .tsx --ext js .",
-    "test:unit": "mocha recursive --reporter spec ./lib",
-    "test:unit-watch": "npm run test:unit -- --watch"
-  },
-  "engines": {
-    "node": ">=6.11.5"
-  },
+  "main": "dist/index.js",
+  "module": "dist/git-revision-webpack-plugin.esm.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -33,16 +24,29 @@
     "url": "https://github.com/pirelenito/git-revision-webpack-plugin/issues"
   },
   "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin",
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
-    "file-loader": "^1.1.11",
-    "fs-extra": "^5.0.0",
-    "mocha": "^5.0.4",
-    "prettier": "1.18.2",
-    "rewire": "^3.0.2",
-    "sinon": "^4.4.8",
-    "webpack": "^4.1.1"
+    "@types/jest": "^24.0.18",
+    "husky": "^3.0.8",
+    "tsdx": "^0.9.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.3"
   }
 }
