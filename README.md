@@ -53,6 +53,7 @@ It is also possible to use [path substitutions](https://webpack.js.org/configura
 - `[git-revision-version]`
 - `[git-revision-hash]`
 - `[git-revision-branch]` (only [when branch is enabled](#branch-false))
+- `[git-revision-last-commit-datetime]`
 
 Example:
 
@@ -67,7 +68,7 @@ module.exports = {
 
 ## Plugin API
 
-The `VERSION`, `COMMITHASH` and `BRANCH` are also exposed through a public API.
+The `VERSION`, `COMMITHASH`, `LASTCOMMITDATETIME` and `BRANCH` are also exposed through a public API.
 
 Example using the [DefinePlugin](https://webpack.js.org/plugins/define-plugin/#usage):
 
@@ -83,6 +84,7 @@ module.exports = {
       'VERSION': JSON.stringify(gitRevisionPlugin.version()),
       'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
       'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
+      'LASTCOMMITDATETIME': JSON.stringify(gitRevisionPlugin.lastcommitdatetime()),
     })
   ]
 }
@@ -167,6 +169,22 @@ module.exports = {
   plugins: [
     new GitRevisionPlugin({
       branchCommand: 'rev-parse --symbolic-full-name HEAD'
+    })
+  ]
+}
+```
+
+### `lastCommitDateTimeCommand: 'log -1 --format=%cI'`
+
+To change the default `git` command used to read the value of `LASTCOMMITDATETIME`:
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      branchCommand: 'log -1 --format=%ci'
     })
   ]
 }
