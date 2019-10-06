@@ -4,8 +4,9 @@
   "description": "Simple webpack plugin that generates VERSION and COMMITHASH files during build",
   "main": "lib/index.js",
   "scripts": {
+    "format": "prettier --write \"**/*.@(json|js|ts)\"",
     "test": "npm run test:lint && npm run test:unit",
-    "test:lint": "standard",
+    "test:lint": "eslint --ext .ts --ext .tsx --ext js .",
     "test:unit": "mocha recursive --reporter spec ./lib",
     "test:unit-watch": "npm run test:unit -- --watch"
   },
@@ -34,12 +35,14 @@
   "homepage": "https://github.com/pirelenito/git-revision-webpack-plugin",
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
     "file-loader": "^1.1.11",
     "fs-extra": "^5.0.0",
     "mocha": "^5.0.4",
+    "prettier": "1.18.2",
     "rewire": "^3.0.2",
     "sinon": "^4.4.8",
-    "standard": "^11.0.1",
     "webpack": "^4.1.1"
   }
 }

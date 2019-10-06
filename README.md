@@ -22,9 +22,7 @@ Then, simply configure it as a plugin in the webpack config:
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
 
 module.exports = {
-  plugins: [
-    new GitRevisionPlugin()
-  ]
+  plugins: [new GitRevisionPlugin()],
 }
 ```
 
@@ -61,8 +59,8 @@ Example:
 module.exports = {
   output: {
     publicPath: 'http://my-fancy-cdn.com/[git-revision-version]/',
-    filename: '[name]-[git-revision-hash].js'
-  }
+    filename: '[name]-[git-revision-hash].js',
+  },
 }
 ```
 
@@ -81,12 +79,12 @@ module.exports = {
   plugins: [
     gitRevisionPlugin,
     new webpack.DefinePlugin({
-      'VERSION': JSON.stringify(gitRevisionPlugin.version()),
-      'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
-      'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
-      'LASTCOMMITDATETIME': JSON.stringify(gitRevisionPlugin.lastcommitdatetime()),
-    })
-  ]
+      VERSION: JSON.stringify(gitRevisionPlugin.version()),
+      COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
+      BRANCH: JSON.stringify(gitRevisionPlugin.branch()),
+      LASTCOMMITDATETIME: JSON.stringify(gitRevisionPlugin.lastcommitdatetime()),
+    }),
+  ],
 }
 ```
 
@@ -104,9 +102,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      lightweightTags: true
-    })
-  ]
+      lightweightTags: true,
+    }),
+  ],
 }
 ```
 
@@ -120,9 +118,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      branch: true
-    })
-  ]
+      branch: true,
+    }),
+  ],
 }
 ```
 
@@ -136,9 +134,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      commithashCommand: 'rev-list --max-count=1 --no-merges HEAD'
-    })
-  ]
+      commithashCommand: 'rev-list --max-count=1 --no-merges HEAD',
+    }),
+  ],
 }
 ```
 
@@ -152,9 +150,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      versionCommand: 'describe --always --tags --dirty'
-    })
-  ]
+      versionCommand: 'describe --always --tags --dirty',
+    }),
+  ],
 }
 ```
 
@@ -168,9 +166,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      branchCommand: 'rev-parse --symbolic-full-name HEAD'
-    })
-  ]
+      branchCommand: 'rev-parse --symbolic-full-name HEAD',
+    }),
+  ],
 }
 ```
 
@@ -184,9 +182,9 @@ var GitRevisionPlugin = require('git-revision-webpack-plugin')
 module.exports = {
   plugins: [
     new GitRevisionPlugin({
-      branchCommand: 'log -1 --format=%ci'
-    })
-  ]
+      branchCommand: 'log -1 --format=%ci',
+    }),
+  ],
 }
 ```
 
