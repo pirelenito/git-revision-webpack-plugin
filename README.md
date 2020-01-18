@@ -88,6 +88,24 @@ module.exports = {
 }
 ```
 
+## 'watch' mode compliant example
+
+Example using the APIs both this and [DefinePlugin](https://webpack.js.org/plugins/define-plugin/#usage):
+
+```javascript
+const webpack = require('webpack')
+const GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new webpack.DefinePlugin({
+      'COMMITHASH': webpack.DefinePlugin.runtimeValue(() => `'${new GitRevisionPlugin().commithash()}'`, [])
+    })
+  ]
+}
+```
+
+
 ## Configuration
 
 The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
