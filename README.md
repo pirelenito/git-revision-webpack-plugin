@@ -128,7 +128,9 @@ module.exports = {
 
 ### `commithashCommand: 'rev-parse HEAD'`
 
-To change the default `git` command used to read the value of `COMMITHASH`:
+To change the default `git` command used to read the value of `COMMITHASH`.
+
+This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
@@ -144,7 +146,9 @@ module.exports = {
 
 ### `versionCommand: 'describe --always'`
 
-To change the default `git` command used to read the value of `VERSION`:
+To change the default `git` command used to read the value of `VERSION`.
+
+This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
@@ -160,7 +164,9 @@ module.exports = {
 
 ### `branchCommand: 'rev-parse --abbrev-ref HEAD'`
 
-To change the default `git` command used to read the value of `BRANCH`:
+To change the default `git` command used to read the value of `BRANCH`.
+
+This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
@@ -176,7 +182,9 @@ module.exports = {
 
 ### `lastCommitDateTimeCommand: 'log -1 --format=%cI'`
 
-To change the default `git` command used to read the value of `LASTCOMMITDATETIME`:
+To change the default `git` command used to read the value of `LASTCOMMITDATETIME`.
+
+This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
 var GitRevisionPlugin = require('git-revision-webpack-plugin')
