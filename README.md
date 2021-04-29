@@ -92,6 +92,20 @@ module.exports = {
 
 The plugin requires no configuration by default, but it is possible to configure it to support custom git workflows.
 
+### hashLength
+
+```javascript
+var GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new GitRevisionPlugin({
+      hashLength: 8
+    })
+  ]
+}
+```
+
 ### `lightweightTags: false`
 
 If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags) support, you may turn on `lightweightTags` option in this way:
