@@ -13,7 +13,7 @@ const targetGitRepository = path.join(__dirname, '../tmp/project/.git')
 const targetBuild = path.join(__dirname, '../tmp/build')
 
 describe('git-revision-webpack-plugin default', function() {
-  beforeEach(function(done) {
+  beforeAll(function(done) {
     fs.emptyDirSync(targetProject)
     fs.copySync(sourceProject, targetProject)
 
@@ -95,7 +95,7 @@ describe('git-revision-webpack-plugin default', function() {
 })
 
 describe('git-revision-webpack-plugin with lightweightTags option', function() {
-  beforeEach(function(done) {
+  beforeAll(function(done) {
     fs.emptyDirSync(targetProject)
     fs.copySync(sourceProject, targetProject)
 
@@ -153,7 +153,7 @@ describe('git-revision-webpack-plugin with lightweightTags option', function() {
       const mainJs = fs.readFileSync(versionPath, 'utf8')
 
       const expectedPublicPath =
-        'r.p="http://cdn.com/assets/master/v2.0.0-beta/9a15b3ba1f8c347f9db94bcfde9630ed4fdeb1b2"'
+        'o.p="http://cdn.com/assets/master/v2.0.0-beta/9a15b3ba1f8c347f9db94bcfde9630ed4fdeb1b2"'
 
       expect(mainJs.indexOf(expectedPublicPath) !== -1).toEqual(true)
     })
@@ -178,7 +178,7 @@ describe('git-revision-webpack-plugin with lightweightTags option', function() {
 })
 
 describe('git-revision-webpack-plugin without branch option', function() {
-  beforeEach(function(done) {
+  beforeAll(function(done) {
     fs.emptyDirSync(targetProject)
     fs.copySync(sourceProject, targetProject)
 

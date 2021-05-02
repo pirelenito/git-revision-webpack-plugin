@@ -50,12 +50,13 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.2",
     "@types/fs-extra": "^9.0.11",
-    "@types/webpack": "4.41.27",
+    "@types/webpack": "5.28.0",
+    "file-loader": "^6.2.0",
     "fs-extra": "^9.1.0",
     "size-limit": "^4.10.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.2.0",
     "typescript": "^4.2.4",
-    "webpack": "^4.1.1"
+    "webpack": "^5.28.0"
   }
 }

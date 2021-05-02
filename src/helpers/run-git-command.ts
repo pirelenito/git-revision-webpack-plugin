@@ -4,7 +4,7 @@ import path from 'path'
 import removeEmptyLines from './remove-empty-lines'
 
 interface Cb {
-  (err: Error | null, output?: string): void
+  (err: Error | null, output: string): void
 }
 
 export default function(gitWorkTree: string | undefined, command: string, callback?: Cb) {
@@ -15,7 +15,7 @@ export default function(gitWorkTree: string | undefined, command: string, callba
   if (callback) {
     exec(gitCommand, function(err, stdout) {
       if (err) {
-        return callback(err)
+        return callback(err, '')
       }
       callback(null, removeEmptyLines(stdout))
     })

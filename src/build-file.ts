@@ -10,7 +10,7 @@ interface BuildFileOptions {
 }
 
 export default function buildFile({ compiler, gitWorkTree, command, replacePattern, asset }: BuildFileOptions) {
-  let data: string | undefined = ''
+  let data: string = ''
 
   compiler.hooks.compilation.tap('GitRevisionWebpackPlugin', compilation => {
     compilation.hooks.optimizeTree.tapAsync('optimize-tree', (_, __, callback) => {
@@ -24,12 +24,7 @@ export default function buildFile({ compiler, gitWorkTree, command, replacePatte
       })
     })
 
-    // we are missing the type definition for assetPath
-    // TODO: create a PR to DefinitelyTyped
-    const mainTemplate = compilation.mainTemplate as any
-
-    // TODO remove `any` once we get the type definitions
-    mainTemplate.hooks.assetPath.tap('GitRevisionWebpackPlugin', (assetPath: any, chunkData: any) => {
+    compilation.hooks.assetPath.tap('GitRevisionWebpackPlugin', (assetPath: any, chunkData: any) => {
       const path = typeof assetPath === 'function' ? assetPath(chunkData) : assetPath
 
       if (!data) return path
@@ -45,6 +40,16 @@ export default function buildFile({ compiler, gitWorkTree, command, replacePatte
       size: function() {
         return data ? data.length : 0
       },
+      buffer: function() {
+        return Buffer.from(data)
+      },
+      map: function() {
+        return {}
+      },
+      sourceAndMap: function() {
+        return { source: data, map: {} }
+      },
+      updateHash: function() {},
     }
   })
 }
