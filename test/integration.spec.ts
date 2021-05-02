@@ -12,7 +12,7 @@ const targetGitRepository = path.join(__dirname, '../tmp/project/.git')
 
 const targetBuild = path.join(__dirname, '../tmp/build')
 
-describe('git-revision-webpack-plugin (integration)', function() {
+describe('git-revision-webpack-plugin default', function() {
   beforeEach(function(done) {
     fs.emptyDirSync(targetProject)
     fs.copySync(sourceProject, targetProject)
