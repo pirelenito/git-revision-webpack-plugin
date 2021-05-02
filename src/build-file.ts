@@ -30,26 +30,26 @@ export default function buildFile({ compiler, gitWorkTree, command, replacePatte
       if (!data) return path
       return path.replace(replacePattern, data)
     })
-  })
 
-  compiler.hooks.emit.tap('GitRevisionWebpackPlugin', compilation => {
-    compilation.assets[asset] = {
-      source: function() {
-        return data
-      },
-      size: function() {
-        return data ? data.length : 0
-      },
-      buffer: function() {
-        return Buffer.from(data)
-      },
-      map: function() {
-        return {}
-      },
-      sourceAndMap: function() {
-        return { source: data, map: {} }
-      },
-      updateHash: function() {},
-    }
+    compilation.hooks.processAssets.tap('GitRevisionWebpackPlugin', assets => {
+      assets[asset] = {
+        source: function() {
+          return data
+        },
+        size: function() {
+          return data ? data.length : 0
+        },
+        buffer: function() {
+          return Buffer.from(data)
+        },
+        map: function() {
+          return {}
+        },
+        sourceAndMap: function() {
+          return { source: data, map: {} }
+        },
+        updateHash: function() {},
+      }
+    })
   })
 }
