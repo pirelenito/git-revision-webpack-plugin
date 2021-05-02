@@ -23,7 +23,9 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "webpack": "^5.0.0"
+  },
   "prettier": {
     "printWidth": 120,
     "semi": false,
