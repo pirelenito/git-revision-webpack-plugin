@@ -1,16 +1,14 @@
 # Git revision webpack plugin
 
-[![Build Status](https://travis-ci.org/pirelenito/git-revision-webpack-plugin.svg)](https://travis-ci.org/pirelenito/git-revision-webpack-plugin)
 [![npm version](https://badge.fury.io/js/git-revision-webpack-plugin.svg)](https://badge.fury.io/js/git-revision-webpack-plugin)
 [![downloads](https://img.shields.io/npm/dm/git-revision-webpack-plugin.svg?style=flat-square)](https://www.npmjs.com/package/git-revision-webpack-plugin)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 [![Code Climate](https://codeclimate.com/github/pirelenito/git-revision-webpack-plugin/badges/gpa.svg)](https://codeclimate.com/github/pirelenito/git-revision-webpack-plugin)
 
 Simple [webpack](https://webpack.js.org/) plugin that generates `VERSION` and `COMMITHASH` files during build based on a local [git](http://www.git-scm.com/) repository.
 
 ## Usage
 
-Given a **webpack 4** project ([check below](#outdated-webpack) for **old webpack versions**), install it as a local development dependency:
+Given a **webpack 5** project ([check below](#outdated-webpack) for **old webpack versions**), install it as a local development dependency:
 
 ```bash
 npm install --save-dev git-revision-webpack-plugin
@@ -198,7 +196,15 @@ module.exports = {
 
 ## Outdated webpack
 
-If your project is **not using webpack version 4 or greater**, you will need to install an older version of this package:
+If your project is not running on Webpack 5, you will need older versions of this package.
+
+### Webpack 4
+
+```
+npm install git-revision-webpack-plugin@3.0.6
+```
+
+### Webpack 3 or older
 
 ```
 npm install git-revision-webpack-plugin@2.5.1
