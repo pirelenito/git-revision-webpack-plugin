@@ -17,7 +17,7 @@ interface GitRevisionPluginOptions {
   lightweightTags?: boolean
 }
 
-export default class GitRevisionPlugin {
+export class GitRevisionPlugin {
   gitWorkTree?: string
   commithashCommand: string
   versionCommand: string

@@ -17,7 +17,7 @@ npm install --save-dev git-revision-webpack-plugin
 Then, simply configure it as a plugin in the webpack config:
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [new GitRevisionPlugin()],
@@ -70,7 +70,7 @@ Example using the [DefinePlugin](https://webpack.js.org/plugins/define-plugin/#u
 
 ```javascript
 const webpack = require('webpack')
-const GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 const gitRevisionPlugin = new GitRevisionPlugin()
 
 module.exports = {
@@ -95,7 +95,7 @@ The plugin requires no configuration by default, but it is possible to configure
 If you need [lightweight tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags) support, you may turn on `lightweightTags` option in this way:
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -111,7 +111,7 @@ module.exports = {
 If you need branch name support, you may turn on `branch` option in this way:
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -129,7 +129,7 @@ To change the default `git` command used to read the value of `COMMITHASH`.
 This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -147,7 +147,7 @@ To change the default `git` command used to read the value of `VERSION`.
 This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -165,7 +165,7 @@ To change the default `git` command used to read the value of `BRANCH`.
 This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [
@@ -183,7 +183,7 @@ To change the default `git` command used to read the value of `LASTCOMMITDATETIM
 This configuration is not not meant to accept arbitrary user input and it is executed by the plugin without any sanitization.
 
 ```javascript
-var GitRevisionPlugin = require('git-revision-webpack-plugin')
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin')
 
 module.exports = {
   plugins: [

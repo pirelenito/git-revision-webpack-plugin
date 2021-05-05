@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import fs from 'fs-extra'
 import path from 'path'
-import GitRevisionPlugin from '../src'
+import { GitRevisionPlugin } from '../src'
 
 const sourceProject = path.join(__dirname, '../fixtures/project')
 const sourceGitRepository = path.join(__dirname, '../fixtures/git-repository')
