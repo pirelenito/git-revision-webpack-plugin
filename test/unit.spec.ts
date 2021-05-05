@@ -1,5 +1,5 @@
 import { Compiler } from 'webpack'
-import GitRevisionPlugin from '../src'
+import { GitRevisionPlugin } from '../src'
 
 jest.mock('../src/build-file', () => jest.fn())
 // eslint-disable-next-line import/first
